@@ -10,5 +10,15 @@
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
         <exec.mainClass>socialmedia.oop.SocialMediaOOP</exec.mainClass>
+        
     </properties>
+    <dependencies>
+    <!-- Other dependencies -->
+
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.30</version> <!-- Update to the latest version if needed -->
+    </dependency>
+</dependencies>
 </project>
