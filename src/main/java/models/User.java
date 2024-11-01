@@ -9,6 +9,8 @@ package models;
  * @author Admin
  */
 public class User {
+    int id;
+    String name;
 
     /**
      * @param args the command line arguments
