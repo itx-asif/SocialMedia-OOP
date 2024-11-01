@@ -11,6 +11,7 @@ package models;
 public class User {
     int id;
     String name;
+    int num:
 
     /**
      * @param args the command line arguments
