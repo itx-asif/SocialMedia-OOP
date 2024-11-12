@@ -6,6 +6,8 @@ package views;
 
 
 public class Main {
-   
+    main(){
+        System.out.println("hello");
+    }
   
 }
