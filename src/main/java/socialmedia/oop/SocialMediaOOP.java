@@ -4,7 +4,8 @@
 
 package socialmedia.oop;
 
-import models.Database;
+
+
 
 /**
  *
@@ -12,7 +13,12 @@ import models.Database;
  */
 public class SocialMediaOOP {
 
-    public static void main(String[] args) {
-      new  Database();
+    public static void main(String[] args)  {
+
+        
+  
+           
+      
     }
+
 }
