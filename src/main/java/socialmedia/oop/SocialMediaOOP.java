@@ -1,24 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package socialmedia.oop;
 
-
-
-
-/**
- *
- * @author itxas
- */
+import views.Main;
 public class SocialMediaOOP {
 
-    public static void main(String[] args)  {
-
-        
-  
-           
+    public static void main(String[] args) {
+new Main();
       
     }
-
 }
