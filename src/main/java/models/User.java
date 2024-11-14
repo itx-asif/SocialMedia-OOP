@@ -16,7 +16,7 @@ public class User {
    private String lastName;
    private String email;
    private String password;
-   private List<Integer> post;
+   private List<Integer> postID;
 
 public User(int id, String firstName, String lastName, String email, String password) {
     this.id = id;
@@ -24,6 +24,8 @@ public User(int id, String firstName, String lastName, String email, String pass
     this.lastName = lastName;
     this.email = email;
     this.password = password;
+}
+public User(){
 }
     public int getId() {
         return id;
@@ -66,11 +68,11 @@ public User(int id, String firstName, String lastName, String email, String pass
     }
 
     public List<Integer> getPost() {
-        return post;
+        return postID;
     }
 
     public void setPost(List<Integer> post) {
-        this.post = post;
+        this.postID = post;
     }
 
 

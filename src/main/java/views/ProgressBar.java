@@ -7,7 +7,6 @@ package views;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.BorderFactory;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
@@ -17,8 +16,8 @@ import javax.swing.BoxLayout;
 
 
 
-public class Main {
- public Main(){
+public class ProgressBar {
+ public ProgressBar(){
       javax.swing.JFrame frame = new javax.swing.JFrame();
         JPanel p1 = new JPanel();
         JLabel l1 = new JLabel();
@@ -27,7 +26,7 @@ public class Main {
         frame.setUndecorated(true);
         frame.setLocationRelativeTo(null);
 
-        l1.setText("LOGO");
+        l1.setText("CONNECTIT");
         l1.setForeground(Color.decode("#f2aa4c"));
         l1.setFont(new java.awt.Font("Segoe UI", 3, 32));
         l1.setHorizontalAlignment(JLabel.CENTER);
@@ -63,11 +62,14 @@ public class Main {
                 Thread.sleep(50);
                 progressBar.setValue(i);
                 if(i==100){
+                    
                 frame.dispose();
+                new Welcome();
+            
                 }
                 
             }
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     
