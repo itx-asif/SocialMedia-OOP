@@ -5,6 +5,7 @@
 package views;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -16,6 +17,12 @@ public class JFrame extends javax.swing.JFrame {
 		getContentPane().setBackground(Color.white);
 		setSize(900, 625);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setLocationRelativeTo(null);}
+		setLocationRelativeTo(null);
+                setResizable(false);
+//               Icon set by umair
+//                Any confusion cordinate to me
+             ImageIcon image=new ImageIcon("C:\\Users\\malik\\Pictures\\image1.jpeg");
+        setIconImage(image.getImage());
+    }
     
 }

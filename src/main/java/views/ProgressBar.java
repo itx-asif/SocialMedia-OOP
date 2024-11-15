@@ -26,7 +26,7 @@ public class ProgressBar {
         frame.setUndecorated(true);
         frame.setLocationRelativeTo(null);
 
-        l1.setText("CONNECTIT");
+        l1.setText("LINKUP");
         l1.setForeground(Color.decode("#f2aa4c"));
         l1.setFont(new java.awt.Font("Segoe UI", 3, 32));
         l1.setHorizontalAlignment(JLabel.CENTER);

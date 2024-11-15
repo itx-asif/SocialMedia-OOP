@@ -69,7 +69,7 @@ public class Welcome {
         p2.setLayout(new BorderLayout());
 
         //  image
-        ImageIcon imageIcon = new ImageIcon("C:/Users/Admin/OneDrive/Desktop/New folder (2)/WhatsApp Image 2024-11-14 at 17.56.43_c6e2d759.jpg"); // Replace with the path to your image
+        ImageIcon imageIcon = new ImageIcon("C:\\Users\\malik\\Desktop\\Ariesian Tech\\SocialMedia-OOP\\src\\main\\java\\views\\image1.jpeg"); // Replace with the path to your image
         Image image = imageIcon.getImage();
         Image scaledImage = image.getScaledInstance(450, 625, Image.SCALE_SMOOTH);
         imageIcon = new ImageIcon(scaledImage);
