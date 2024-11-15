@@ -10,6 +10,9 @@ package views;
  */
 import javax.swing.*;
 import java.awt.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Welcome {
     public Welcome() {
@@ -50,7 +53,7 @@ public class Welcome {
         loginButton.setBackground(Color.BLUE);
         loginButton.setForeground(Color.WHITE);
         buttonPanel.add(loginButton);
-
+        
         // Register Button
         JButton registrationButton = new JButton("Register");
         registrationButton.setBackground(Color.BLUE);
@@ -85,5 +88,23 @@ public class Welcome {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+          registrationButton.addActionListener(new ActionListener() { 
+            @Override 
+            public void actionPerformed(ActionEvent e) { 
+                // Code to execute when button is clicked 
+                frame.dispose();
+                new Registration();
+            } 
+        });
+             loginButton.addActionListener(new ActionListener() { 
+            @Override 
+            public void actionPerformed(ActionEvent e) { 
+                // Code to execute when button is clicked 
+                frame.dispose();
+                new Login();
+            } 
+        });
     }
 }
+         
+

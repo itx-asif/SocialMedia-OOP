@@ -59,7 +59,7 @@ public class ProgressBar {
 
         try {
             for (int i = 0; i <= 100; i++) {
-                Thread.sleep(50);
+                Thread.sleep(5);
                 progressBar.setValue(i);
                 if(i==100){
                     
