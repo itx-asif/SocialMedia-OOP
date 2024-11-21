@@ -15,14 +15,9 @@ public class Dashboard {
         CardLayout cardLayout = new CardLayout();
         cardPanel.setLayout(cardLayout);
 
-        // Create different content panels
-//        JPanel homePanel = new JPanel();
-//        homePanel.setBackground(Color.BLUE);
-//        homePanel.add(new JLabel("Home - Show All Posts"));
+  
 
-        JPanel postPanel = new JPanel();
-        postPanel.setBackground(Color.LIGHT_GRAY);
-        postPanel.add(new JLabel("Post - Create New Post"));
+       
 
         JPanel commentPanel = new JPanel();
         commentPanel.setBackground(Color.CYAN);
@@ -33,7 +28,7 @@ public class Dashboard {
 
         // Add panels to the cardPanel with unique names
         cardPanel.add(new HomePanel(), "Home");
-        cardPanel.add(postPanel, "Post");
+        cardPanel.add(new PostPanel(), "Post");
         cardPanel.add(commentPanel, "Comment");
        
         cardPanel.add(new SettingPanel(), "Setting");
