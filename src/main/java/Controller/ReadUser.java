@@ -15,13 +15,13 @@ import java.util.ArrayList;
 import models.Database;
 import models.User;
 
-public class Login {
+public class ReadUser {
  
 
 	private boolean loggedIn;
 	private User user;
 	
-	public Login(String email, String password, Database database) {
+	public ReadUser(String email, String password, Database database) {
 		String select = "SELECT * FROM `users` WHERE `Email` = '"+email+
 				"' AND `Password` = '"+password+"';";
 		try {

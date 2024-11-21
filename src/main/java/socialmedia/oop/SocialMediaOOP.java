@@ -1,5 +1,6 @@
 package socialmedia.oop;
 
+import views.JTextField;
 import views.*;
 import Controller.*;
 import java.util.List;
