@@ -65,6 +65,7 @@ public class ProgressBar {
                     
                 frame.dispose();
                 new Welcome();
+                   
             
                 }
                 
