@@ -42,5 +42,27 @@ public class ReadPost {
 	
     }
     
-    
+    public void Updatepost(Database DB){
+     ArrayList<Post> newposts = new ArrayList<>();
+		String select = "SELECT * FROM `posts` ";
+		try {
+			ResultSet rs = DB.getStatement().executeQuery(select);
+			while (rs.next()) {
+				Post p = new Post();
+				p.setID(rs.getInt("id"));
+                                p.setUserID(rs.getInt("UserID"));
+				p.setContent(rs.getString("Content"));
+				newposts.add(p);
+                                
+                          // ReadPostComments r=new ReadPostComments(p,DB);
+                          // p.setComments(r.getComments());
+                            
+			}
+		} catch (SQLException e) {
+			
+		} finally{
+                    posts = newposts;
+                }
+                
+    }
 }
