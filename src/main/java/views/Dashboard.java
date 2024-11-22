@@ -15,13 +15,6 @@ public class Dashboard {
         CardLayout cardLayout = new CardLayout();
         cardPanel.setLayout(cardLayout);
 
-  
-
-       
-
-        JPanel commentPanel = new JPanel();
-        commentPanel.setBackground(Color.CYAN);
-        commentPanel.add(new JLabel("Comments - View User Comments"));
 
 
 //     
@@ -29,7 +22,7 @@ public class Dashboard {
         // Add panels to the cardPanel with unique names
         cardPanel.add(new HomePanel(), "Home");
         cardPanel.add(new PostPanel(), "Post");
-        cardPanel.add(commentPanel, "Comment");
+        cardPanel.add(new CommentPanel(), "Comment");
        
         cardPanel.add(new SettingPanel(), "Setting");
         

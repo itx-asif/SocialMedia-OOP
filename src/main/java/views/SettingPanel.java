@@ -13,7 +13,7 @@ import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+//import javax.swing.JTextField;
 
 public class SettingPanel extends JPanel {
 
@@ -33,7 +33,7 @@ public class SettingPanel extends JPanel {
         nameLabel.setFont(new Font("Arial", Font.BOLD, 20));
         add(nameLabel);
 
-        JTextField nameField = new JTextField();
+        JTextField nameField = new JTextField("Enter Name");
         nameField.setBounds(300, 100, 200, 30);
         add(nameField);
 
@@ -43,7 +43,7 @@ public class SettingPanel extends JPanel {
         emailLabel.setFont(new Font("Arial", Font.BOLD, 20));
         add(emailLabel);
 
-        JTextField emailField = new JTextField();
+        JTextField emailField = new JTextField("Enter Email");
         emailField.setBounds(300, 150, 200, 30);
         add(emailField);
 
@@ -53,7 +53,7 @@ public class SettingPanel extends JPanel {
         passwordLabel.setFont(new Font("Arial", Font.BOLD, 20));
         add(passwordLabel);
 
-        JTextField passwordField = new JTextField();
+        JTextField passwordField = new JTextField("Enter Password");
         passwordField.setBounds(300, 200, 200, 30);
         add(passwordField);
 
@@ -63,7 +63,7 @@ public class SettingPanel extends JPanel {
         confirmPasswordLabel.setFont(new Font("Arial", Font.BOLD, 20));
         add(confirmPasswordLabel);
 
-        JTextField confirmPasswordField = new JTextField();
+        JTextField confirmPasswordField = new JTextField("New Password");
         confirmPasswordField.setBounds(300, 250, 200, 30);
         add(confirmPasswordField);
 

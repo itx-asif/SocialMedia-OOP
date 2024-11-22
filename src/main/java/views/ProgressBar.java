@@ -59,12 +59,13 @@ public class ProgressBar {
 
         try {
             for (int i = 0; i <= 100; i++) {
-                Thread.sleep(5);
+                Thread.sleep(2);
                 progressBar.setValue(i);
                 if(i==100){
                     
                 frame.dispose();
                 new Welcome();
+                    
                    
             
                 }
