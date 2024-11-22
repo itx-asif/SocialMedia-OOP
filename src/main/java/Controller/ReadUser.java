@@ -52,7 +52,7 @@ public class ReadUser {
 		}
 	}
 	
-	public boolean loggedIn() {
+	public boolean isloggedIn() {
 		return loggedIn;
 	}
 	

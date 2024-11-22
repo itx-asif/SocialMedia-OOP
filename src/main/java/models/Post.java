@@ -1,22 +1,22 @@
 
 package models;
 
+
 import java.util.ArrayList;
 
 
 public class Post {
-   int id;
+int ID;
     int userID;
     String content;
-    ArrayList<Comments> commets;
+    ArrayList<Comments> comments;
   
-    
-    public int getId() {
-        return id;
+    public int getID() {
+        return ID;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public int getUserID() {
@@ -35,13 +35,17 @@ public class Post {
         this.content = content;
     }
 
-    public ArrayList<Comments> getCommets() {
-        return commets;
+    public ArrayList<Comments> getComments() {
+        return comments;
     }
 
-    public void setCommets(ArrayList<Comments> commets) {
-        this.commets = commets;
+    public void setComments(ArrayList<Comments> comments) {
+        this.comments = comments;
     }
+   
+  
+    
+   
 
   
  

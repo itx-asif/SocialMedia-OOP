@@ -15,10 +15,10 @@ import javax.swing.BorderFactory;
  *
  * @author itxas
  */
-public class JTextField extends javax.swing.JTextField {
+public class TextField extends javax.swing.JTextField {
     	private Shape shape;
 	private String hint;
-    public JTextField(String hint) {
+    public TextField(String hint) {
         super();
 		this.hint = hint;
 		setFont(new Font("Segoe UI", Font.BOLD, 20));

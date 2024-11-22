@@ -6,6 +6,7 @@
  
 package views;
 
+import Controller.ReadUser;
 import java.awt.*;
 import java.awt.event.*;
 //import javax.swing.*;
@@ -13,8 +14,10 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import models.Database;
 
 
 /**
@@ -22,11 +25,9 @@ import javax.swing.SwingConstants;
  * @author malik
  */
 public class Login {
-   public Login(){
+   public Login(Database DB){
        JFrame frame = new JFrame();
-//	frame.setSize(900,625);
-//        frame.setLocationRelativeTo(null);
-       
+
 		JPanel panel = new JPanel(new BorderLayout());
                 panel.setBorder(BorderFactory.createEmptyBorder(60, 40, 17, 30));
 		panel.setBackground(Color.LIGHT_GRAY);
@@ -49,36 +50,35 @@ public class Login {
 		center.add(password);
 		
                 
-//                confirmPassword.setFont(new Font("Segoe UI", Font.BOLD, 20));
-//                
-//		confirmPassword.setOpaque(false);
-//		confirmPassword.setForeground(Color.decode("#f2aa4c"));
-//		confirmPassword.setBorder(BorderFactory.createEmptyBorder(TOP, 20, BOTTOM, 10));
-                
+           
 		    JButton createAcc = new JButton("Login");
         createAcc.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                if(firstName.getText().equals("")){
-                  
-                      new Dashboard();
-                  
+                if(email.getText().equals("")){
+                    
+                
+                JOptionPane.showMessageDialog(frame, "fill the required fields");
+            }
+               if(password.getText().equals("")){
+                    
+                
+                JOptionPane.showMessageDialog(frame, "fill the required fields");
+            }          
+               
+               ReadUser U = new ReadUser(email.getText(),password.getText(),DB);
+               if(U.isloggedIn()){
+                      new Dashboard(U.getUser(),DB);
+               }
+               else{
+                   JOptionPane.showMessageDialog(frame, "User not Found");
+               }
                   
                 
                 
             }
-//        }
+       
         });
-//     firstName.addFocusListener(new FocusListener() {
-//    @Override
-//    public void focusGained(FocusEvent e) {
-//        firstName.setText("");  // Assuming 'firstName' is a JTextField
-//    }
-//
-//    @Override
-//    public void focusLost(FocusEvent e) {
-//        // You can leave this empty or add some logic here
-//    }
-//});
+ 
 
         center.add(createAcc);
 

@@ -3,9 +3,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import models.Database;
+import models.User;
 
 public class Dashboard {
-    public Dashboard() {
+    public Dashboard(User U, Database DB) {
         // Create the main frame
         JFrame frame = new JFrame();
        
@@ -20,7 +22,7 @@ public class Dashboard {
 //     
 
         // Add panels to the cardPanel with unique names
-        cardPanel.add(new HomePanel(), "Home");
+        cardPanel.add(new HomePanel(U,DB), "Home");
         cardPanel.add(new PostPanel(), "Post");
         cardPanel.add(new CommentPanel(), "Comment");
        

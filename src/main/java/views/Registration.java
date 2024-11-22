@@ -7,29 +7,36 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package views;
+import Controller.CreateUser;
 import java.awt.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+
+import java.awt.event.*;
 
 //import javax.swing.*;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import javax.swing.JOptionPane;
+
 import javax.swing.SwingConstants;
 import static javax.swing.SwingConstants.BOTTOM;
 import static javax.swing.SwingConstants.TOP;
+import models.Database;
+import models.User;
 /**
  *
  * @author malik
  */
 public class Registration {
-   public Registration(){
+   public Registration(Database DB){
        JFrame frame = new JFrame();
-//	frame.setSize(900,625);
-//        frame.setLocationRelativeTo(null);
+
        
 		JPanel panel = new JPanel(new BorderLayout());
 		panel.setBackground(Color.LIGHT_GRAY);
@@ -53,33 +60,55 @@ public class Registration {
 		JTextField confirmPassword = new JTextField("Confirm Password");
 		center.add(confirmPassword);
                 
-//                confirmPassword.setFont(new Font("Segoe UI", Font.BOLD, 20));
-//                
-//		confirmPassword.setOpaque(false);
-//		confirmPassword.setForeground(Color.decode("#f2aa4c"));
-//		confirmPassword.setBorder(BorderFactory.createEmptyBorder(TOP, 20, BOTTOM, 10));
-                
+           
 		    JButton createAcc = new JButton("Create Account");
         createAcc.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                if(firstName.getText().equals("")){
+           
+               if(firstName.getText().equals("")){
                     
                 
-                JOptionPane.showMessageDialog(frame, "We will verify you");
+                JOptionPane.showMessageDialog(frame, "fill the required fields");
             }
-//        }
+               if(lastName.getText().equals("")){
+                    
+                
+                JOptionPane.showMessageDialog(frame, "fill the required fields");
+            }
+               if(email.getText().equals("")){
+                    
+                
+                JOptionPane.showMessageDialog(frame, "fill the required fields");
+            }
+               if(password.getText().equals("")){
+                    
+                
+                JOptionPane.showMessageDialog(frame, "fill the required fields");
+            }
+               boolean Equal = password.getText().equals(confirmPassword.getText());
+                          if(!Equal){
+                    
+                              System.out.println(password.getText());
+                                System.out.println(confirmPassword.getText());
+                JOptionPane.showMessageDialog(frame, "password dont match");
+                              }
+                             User u = new User();
+				u.setFirstName(firstName.getText());
+				u.setLastName(lastName.getText());
+				u.setEmail(email.getText());
+				u.setPassword(password.getText());
+				CreateUser create = new CreateUser(u, DB);
+                                if (!create.isEmailUsed()) {
+					create.create();
+					
+					 new Dashboard(create.getUser(),DB);
+					frame.dispose();
+				} else {
+					 JOptionPane.showMessageDialog(frame, "user Exists");
+				}
+        }
         });
-//     firstName.addFocusListener(new FocusListener() {
-//    @Override
-//    public void focusGained(FocusEvent e) {
-//        firstName.setText("");  // Assuming 'firstName' is a JTextField
-//    }
-//
-//    @Override
-//    public void focusLost(FocusEvent e) {
-//        // You can leave this empty or add some logic here
-//    }
-//});
+  
 
         center.add(createAcc);
 
