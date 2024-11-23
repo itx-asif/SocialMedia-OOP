@@ -27,8 +27,20 @@
         
     </properties>
     <dependencies>
-    <!-- Other dependencies -->
+<!-- https://mvnrepository.com/artifact/com.miglayout/miglayout -->
+<dependency>
+    <groupId>com.miglayout</groupId>
+    <artifactId>miglayout</artifactId>
+    <version>3.7.4</version>
+</dependency>
 
+
+    <!-- FlatLaf dependency for modern look-and-feel -->
+    <dependency>
+        <groupId>com.formdev</groupId>
+        <artifactId>flatlaf</artifactId>
+        <version>3.5.2</version> <!-- Check for the latest version -->
+    </dependency>
     <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>

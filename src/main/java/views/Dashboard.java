@@ -23,7 +23,7 @@ public class Dashboard {
 
         // Add panels to the cardPanel with unique names
         cardPanel.add(new HomePanel(U,DB), "Home");
-        cardPanel.add(new PostPanel(), "Post");
+        cardPanel.add(new PostPanel(U,DB), "Post");
         cardPanel.add(new CommentPanel(), "Comment");
        
         cardPanel.add(new SettingPanel(), "Setting");
@@ -57,7 +57,7 @@ public class Dashboard {
         });
 
         // Set the layout for the frame
-        frame.setLayout(new BorderLayout());
+        frame.setLayout(new BorderLayout(5,0));
         frame.add(sideBar, BorderLayout.WEST);  // Add sidebar to the left
         frame.add(cardPanel, BorderLayout.CENTER);  // Add card panel to the center
 

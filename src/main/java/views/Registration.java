@@ -39,7 +39,9 @@ public class Registration {
 
        
 		JPanel panel = new JPanel(new BorderLayout());
-		panel.setBackground(Color.LIGHT_GRAY);
+              panel.setBorder(BorderFactory.createEmptyBorder(60, 40, 17, 30));
+                
+		//panel.setBackground(Color.LIGHT_GRAY);
                  JLabel titleLabel = new JLabel("Register Now!");
         titleLabel.setHorizontalAlignment(SwingConstants.CENTER); // Centers the text
         titleLabel.setFont(new Font("Arial", Font.BOLD, 40)); // Increases font size and makes it bold
@@ -48,7 +50,7 @@ public class Registration {
 		
 		JPanel center = new JPanel(new GridLayout(6, 1, 10, 10));
 		center.setBackground(null);
-		center.setBorder(BorderFactory.createEmptyBorder(60, 231, 17, 231));
+		center.setBorder(BorderFactory.createEmptyBorder(10,10, 10, 10));
 		JTextField firstName = new JTextField("First Name");
 		center.add(firstName);
 		JTextField lastName = new JTextField("Last Name");
@@ -113,7 +115,7 @@ public class Registration {
         center.add(createAcc);
 
         panel.add(center, BorderLayout.CENTER);
-        frame.add(panel);
+        frame.add(panel, "width 400, height 500");
         frame.setVisible(true);
                 
        

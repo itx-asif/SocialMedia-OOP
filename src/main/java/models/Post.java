@@ -6,10 +6,10 @@ import java.util.ArrayList;
 
 
 public class Post {
-int ID;
-    int userID;
-    String content;
-    ArrayList<Comments> comments;
+private int ID;
+  private  int userID;
+   private String content;
+   private ArrayList<Comments> comments;
   
     public int getID() {
         return ID;

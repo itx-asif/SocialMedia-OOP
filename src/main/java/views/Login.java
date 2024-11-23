@@ -15,7 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
+//import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import models.Database;
 
@@ -30,7 +30,7 @@ public class Login {
 
 		JPanel panel = new JPanel(new BorderLayout());
                 panel.setBorder(BorderFactory.createEmptyBorder(60, 40, 17, 30));
-		panel.setBackground(Color.LIGHT_GRAY);
+		//panel.setBackground(Color.LIGHT_GRAY);
                  JLabel titleLabel = new JLabel("Login Now!");
         titleLabel.setHorizontalAlignment(SwingConstants.CENTER); // Centers the text
         titleLabel.setFont(new Font("Arial", Font.BOLD, 40)); // Increases font size and makes it bold
@@ -39,9 +39,10 @@ public class Login {
 		
 		JPanel center = new JPanel(new GridLayout(6, 1, 10, 10));
 		center.setBackground(null);
-		center.setBorder(BorderFactory.createEmptyBorder(60, 231, 17, 231));
+		center.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
                     JLabel Emaillabel = new JLabel("Email");
 		JTextField email = new JTextField("Email");
+                email.setFont(new Font("Roboto", Font.PLAIN, 16));
                 		center.add(Emaillabel);
 		center.add(email);
                 JLabel Passwordlabel = new JLabel("Password");
