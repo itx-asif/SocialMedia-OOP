@@ -21,7 +21,7 @@ public class ReadPostComments {
         return comments;
     }
     ArrayList<Comments> comments;
-    ReadPostComments(Post p,Database DB){
+ public  ReadPostComments(Post p,Database DB){
          comments = new ArrayList<>();
 		String select = "SELECT * FROM `Comments` WHERE `PostID` = "+p.getID()+" ;";
 		try {

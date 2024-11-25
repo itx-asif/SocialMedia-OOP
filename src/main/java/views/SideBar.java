@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 public class SideBar extends JPanel {
     public SideBar(ActionListener listener) {
         // Set up the sidebar panel
-        setBackground(Color.GRAY);
+      //  setBackground(Color.GRAY);
         setPreferredSize(new Dimension(200, 625)); // Set a fixed size for the sidebar panel
         setLayout(null);  // Absolute positioning (you could use a LayoutManager for more flexibility)
 
@@ -32,18 +32,11 @@ public class SideBar extends JPanel {
         post.addActionListener(listener);  // Add the listener to the button
         add(post);
 
-        // Comment Button
-        JButton comment = new JButton("Comment");
-        comment.setBounds(20, 290, 150, 60);
-        comment.setActionCommand("Comment");
-        comment.addActionListener(listener);  // Add the listener to the button
-        add(comment);
-
-      
+  
 
         // Setting Button
         JButton setting = new JButton("Setting");
-        setting.setBounds(20, 360, 150, 60);
+        setting.setBounds(20, 290, 150, 60);
         setting.setActionCommand("Setting");
         setting.addActionListener(listener);  // Add the listener to the button
         add(setting);

@@ -55,15 +55,15 @@ public class ProgressBar {
         p1.add(progressPanel, BorderLayout.SOUTH);
         frame.add(p1);
 
-        frame.setVisible(true);
-
+       frame.setAlwaysOnTop(true);
+     frame.setVisible(true);
         try {
             for (int i = 0; i <= 100; i++) {
-                Thread.sleep(2);
+                Thread.sleep(10);
                 progressBar.setValue(i);
                 if(i==100){
                     
-                frame.dispose();
+                 frame.dispose();
                 new Welcome();
                     
                    
@@ -74,6 +74,8 @@ public class ProgressBar {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    
+      
+      
+  
    }
 }

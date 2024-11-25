@@ -26,7 +26,8 @@ public class CreatePost {
 		String insert = "INSERT INTO `posts`(`Content`, `UserID`) VALUES"
 				+ " ('"+post.getContent()+"','"+post.getUserID()+"');";
 		try {
-			database.getStatement().execute(insert);
+			                database.getStatement().execute(insert);
+                        
 			posted = true;
 		} catch (SQLException e) {
 			posted = false;

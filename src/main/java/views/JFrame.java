@@ -4,7 +4,6 @@
  */
 package views;
 
-import java.awt.Color;
 import javax.swing.ImageIcon;
 import net.miginfocom.swing.MigLayout;
 

@@ -22,7 +22,8 @@ public class ReadPost {
     private ArrayList<Post> posts;
     public ReadPost(Database DB){
         posts = new ArrayList<>();
-		String select = "SELECT * FROM `posts` ";
+        
+		String select = "SELECT * FROM `posts`";
 		try {
 			ResultSet rs = DB.getStatement().executeQuery(select);
 			while (rs.next()) {
@@ -31,14 +32,26 @@ public class ReadPost {
                                 p.setUserID(rs.getInt("UserID"));
 				p.setContent(rs.getString("Content"));
 				posts.add(p);
-                                System.out.println(rs.getInt("id"));
-                          // ReadPostComments r=new ReadPostComments(p,DB);
-                          // p.setComments(r.getComments());
+                               
+//                                try{
+//                          ReadPostComments r=new ReadPostComments(p,DB);
+//                          p.setComments(r.getComments());}
+//                                catch(Exception e){
+//                                    
+//                                }
+//                                try {
+//                                 ReadLike like = new ReadLike(DB,p);
+//                          p.setLikes(like.getLikes());
+//                            } catch (Exception e) {
+//                            }
+                         
                             
 			}
 		} catch (SQLException e) {
 			
 		}
+                
+                
 	
     }
     
@@ -53,12 +66,11 @@ public class ReadPost {
                                 p.setUserID(rs.getInt("UserID"));
 				p.setContent(rs.getString("Content"));
 				newposts.add(p);
-                                
-                          // ReadPostComments r=new ReadPostComments(p,DB);
-                          // p.setComments(r.getComments());
-                            
-			}
-		} catch (SQLException e) {
+                              
+                      
+                            }
+			
+		}catch (SQLException e) {
 			
 		} finally{
                     posts = newposts;

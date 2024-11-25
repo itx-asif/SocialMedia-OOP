@@ -69,6 +69,7 @@ public class Login {
                ReadUser U = new ReadUser(email.getText(),password.getText(),DB);
                if(U.isloggedIn()){
                       new Dashboard(U.getUser(),DB);
+                      frame.dispose();
                }
                else{
                    JOptionPane.showMessageDialog(frame, "User not Found");

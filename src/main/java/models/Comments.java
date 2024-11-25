@@ -5,6 +5,16 @@ package models;
 
 
 public class Comments {
+
+    public Comments(int ID, int postID, int userID, String Content) {
+        this.ID = ID;
+        this.postID = postID;
+        this.userID = userID;
+        this.Content = Content;
+    }
+    public Comments(){
+        
+    }
     int ID;
     int postID;
     int userID;

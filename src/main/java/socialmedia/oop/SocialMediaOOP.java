@@ -1,14 +1,15 @@
 package socialmedia.oop;
 
 
-import com.formdev.flatlaf.FlatDarkLaf;
+//import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLaf;
-import com.formdev.flatlaf.FlatLightLaf;
-import com.formdev.flatlaf.themes.FlatMacDarkLaf;
+//import com.formdev.flatlaf.FlatLightLaf;
+  import com.formdev.flatlaf.themes.FlatMacDarkLaf;
 import com.formdev.flatlaf.themes.FlatMacLightLaf;
-import java.awt.Color;
+//import java.awt.Color;
 import java.awt.EventQueue;
-import java.util.Collections;
+import javax.swing.JFrame;
+//import java.util.Collections;
 import javax.swing.UIManager;
 import views.*;
 
@@ -22,7 +23,7 @@ public class SocialMediaOOP {
         try {
             FlatLaf.registerCustomDefaultsSource("Register.Themes");
            
-            FlatMacLightLaf.setup();
+            FlatMacDarkLaf.setup();
             UIManager.put( "Component.arc", 999 );
            
             
@@ -35,8 +36,7 @@ public class SocialMediaOOP {
 
         // Launch the application
         EventQueue.invokeLater(() -> new ProgressBar());
-;
-  
+        
   
     }
 }
