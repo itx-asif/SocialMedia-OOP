@@ -2,6 +2,7 @@ package Controller;
 
 import models.Database;
 import java.sql.*;
+import views.Alert;
 
 public class DeletePost {
 
@@ -23,7 +24,7 @@ public class DeletePost {
                 database.getStatement().execute(deletePostQuery);
     
         } catch (SQLException e) {
-            // Rollback the transaction if something goes wrong
+             new Alert(e.getMessage());
             
         } 
         

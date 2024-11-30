@@ -8,6 +8,7 @@
     import java.sql.*;
     import java.util.ArrayList;
     import models.*;
+import views.Alert;
 
     /**
      *
@@ -30,7 +31,7 @@
                     try {
                             database.getStatement().execute(insert);
                     } catch (SQLException e) {
-                                             System.out.println(e.getMessage());
+                                              new Alert(e.getMessage());
                     }
             }
 
@@ -41,7 +42,7 @@
                             ResultSet rs = database.getStatement().executeQuery(select);
                             used = rs.next();
                     } catch (SQLException e) {
-                             System.out.println(e.getMessage());
+                              new Alert(e.getMessage());
                     }
                     return used;
             }
@@ -59,7 +60,7 @@
                                     }
                                     u.setPost(postID);
                                     } catch (SQLException e) {
-                                             System.out.println(e.getMessage());
+                                             new Alert(e.getMessage());
                     }
 
                     return u;

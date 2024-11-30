@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import models.Database;
 import models.User;
+import views.Alert;
 
 /**
  *
@@ -27,7 +28,7 @@ public class Readuserbyid {
 			user.setLastName(rs.getString("LastName"));
 			user.setEmail(rs.getString("Email"));
 		} catch (SQLException e) {
-			
+			 new Alert(e.getMessage());
 		}
 	}
 	

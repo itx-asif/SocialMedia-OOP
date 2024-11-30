@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import models.Database;
 import models.Post;
+import views.Alert;
 
 /**
  *
@@ -32,23 +33,10 @@ public class ReadPost {
                                 p.setUserID(rs.getInt("UserID"));
 				p.setContent(rs.getString("Content"));
 				posts.add(p);
-                               
-//                                try{
-//                          ReadPostComments r=new ReadPostComments(p,DB);
-//                          p.setComments(r.getComments());}
-//                                catch(Exception e){
-//                                    
-//                                }
-//                                try {
-//                                 ReadLike like = new ReadLike(DB,p);
-//                          p.setLikes(like.getLikes());
-//                            } catch (Exception e) {
-//                            }
                          
-                            
 			}
 		} catch (SQLException e) {
-			
+			 new Alert(e.getMessage());
 		}
                 
                 

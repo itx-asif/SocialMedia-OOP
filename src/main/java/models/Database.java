@@ -1,6 +1,7 @@
 package models;
 
 import java.sql.*;
+import views.Alert;
 
 public class Database {
     private final String username = "root";    // camelCase for instance variables
@@ -12,7 +13,7 @@ public class Database {
         try {
             // Establish connection to the database
             Connection connection = DriverManager.getConnection(url, username, password); 
-            System.out.println("Connected to the database server.");
+          
 
             statement = connection.createStatement();
             createDatabaseIfNotExists();
@@ -24,7 +25,7 @@ public class Database {
             createLikesTable();
 
         } catch (SQLException e) {
-            System.out.println("ERROR: " + e.getMessage());
+             new Alert("Database not found");
         }
     }
 

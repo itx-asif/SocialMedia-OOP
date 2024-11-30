@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import models.Database;
 import models.User;
+import views.Alert;
 
 public class ReadUser {
  
@@ -48,7 +49,7 @@ public class ReadUser {
 				
 			}
 		} catch (SQLException e) {
-			                 System.out.println("e.massage");
+			               new Alert(e.getMessage());
 		}
 	}
 	

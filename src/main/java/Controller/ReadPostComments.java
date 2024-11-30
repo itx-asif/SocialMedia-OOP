@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import models.Comments;
 import models.Database;
 import models.Post;
+import views.Alert;
 
 /**
  *
@@ -35,7 +36,7 @@ public class ReadPostComments {
 				comments.add(c);
 			}
 		} catch (SQLException e) {
-			
+			 new Alert(e.getMessage());
 		}
     }
     

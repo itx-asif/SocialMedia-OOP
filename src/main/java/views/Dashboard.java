@@ -56,8 +56,8 @@ public class Dashboard {
                     case "Post":
                         PostPanel postPanel = new PostPanel(U, DB, commentActionListener);
                           postPanel.revalidate();
-                postPanel.repaint();
-                cardPanel.add(postPanel, "Post");
+                         postPanel.repaint();
+                            cardPanel.add(postPanel, "Post");
                         cardLayout.show(cardPanel, "Post");
                         break;
                     case "Setting":

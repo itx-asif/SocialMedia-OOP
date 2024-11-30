@@ -9,6 +9,7 @@ import models.Database;
 import models.Likes;
 import models.Post;
 import models.User;
+import views.Alert;
 
 public class ReadLike {
     private Database Db;
@@ -37,7 +38,7 @@ public class ReadLike {
                 likes.add(l);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ReadLike.class.getName()).log(Level.SEVERE, null, ex);
+            new Alert(ex.getMessage());
         }
     }
 
@@ -48,7 +49,7 @@ public class ReadLike {
             ResultSet rs = Db.getStatement().executeQuery(query);
             return rs.next();  // Returns true if user has liked the post
         } catch (SQLException ex) {
-            Logger.getLogger(ReadLike.class.getName()).log(Level.SEVERE, null, ex);
+             new Alert(ex.getMessage());
         }
         return false;
     }
@@ -61,11 +62,8 @@ public class ReadLike {
                 Db.getStatement().executeUpdate(query);
                 loadLikes();  // Re-load the likes list after adding the new like
             } catch (SQLException ex) {
-                Logger.getLogger(ReadLike.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else {
-            System.out.println("You already liked this post.");
-        }
+ new Alert(ex.getMessage());            }
+        } 
     }
 
     // Method to dislike (remove like from) a post
@@ -76,11 +74,9 @@ public class ReadLike {
                 Db.getStatement().executeUpdate(query);
                 likes.removeIf(like -> like.getUserID() == u.getId() && like.getPostID() == p.getID());
             } catch (SQLException ex) {
-                Logger.getLogger(ReadLike.class.getName()).log(Level.SEVERE, null, ex);
+               new Alert(ex.getMessage());
             }
-        } else {
-            System.out.println("You haven't liked this post yet.");
-        }
+        } 
     }
 
     // Getter for the likes list (optional)

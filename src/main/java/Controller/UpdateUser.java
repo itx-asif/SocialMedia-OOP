@@ -5,6 +5,7 @@ import models.User;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import views.Alert;
 
 public class UpdateUser {
 
@@ -37,7 +38,7 @@ public class UpdateUser {
             }
 
          catch (SQLException e) {
-            e.printStackTrace();  // Log the exception for debugging
+ new Alert(e.getMessage()); // Log the exception for debugging
             return false;  // Return false if there's an error during update
         }
         }}}

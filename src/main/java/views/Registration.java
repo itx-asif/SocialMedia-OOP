@@ -70,29 +70,29 @@ public class Registration {
                if(firstName.getText().equals("")){
                     
                 
-                JOptionPane.showMessageDialog(frame, "fill the required fields");
+                new Alert("fill the required fields");
             }
-               if(lastName.getText().equals("")){
+             else  if(lastName.getText().equals("")){
                     
                 
-                JOptionPane.showMessageDialog(frame, "fill the required fields");
+               new Alert("fill the required fields");
             }
-               if(email.getText().equals("")){
+             else  if(email.getText().equals("")){
                     
                 
-                JOptionPane.showMessageDialog(frame, "fill the required fields");
+              new Alert("fill the required fields");
             }
-               if(password.getText().equals("")){
+              else if(password.getText().equals("")){
                     
                 
-                JOptionPane.showMessageDialog(frame, "fill the required fields");
-            }
+         new Alert("fill the required fields");
+            } else{
                boolean Equal = password.getText().equals(confirmPassword.getText());
                           if(!Equal){
                     
                               System.out.println(password.getText());
                                 System.out.println(confirmPassword.getText());
-                JOptionPane.showMessageDialog(frame, "password dont match");
+                new Alert("password dont match");
                               }
                              User u = new User();
 				u.setFirstName(firstName.getText());
@@ -108,7 +108,7 @@ public class Registration {
 				} else {
 					 JOptionPane.showMessageDialog(frame, "user Exists");
 				}
-        }
+        }}
         });
   
 

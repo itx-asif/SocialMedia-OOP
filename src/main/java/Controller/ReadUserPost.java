@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import models.Database;
 import models.Post;
+import views.Alert;
 
 /**
  *
@@ -48,7 +49,7 @@ public class ReadUserPost {
                 userPosts.add(post);
             }
         } catch (SQLException e) {
-            e.printStackTrace();  // Log the exception (you can replace with proper logging)
+            new Alert(e.getMessage());  // Log the exception (you can replace with proper logging)
         }
          
     }

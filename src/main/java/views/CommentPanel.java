@@ -4,6 +4,7 @@ import Controller.CreateComment;
 import Controller.ReadPostComments;
 import Controller.Readuserbyid;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import models.Database;
@@ -18,7 +20,7 @@ import models.Post;
 import models.User;
 import models.Comments;
 
-public class CommentPanel extends JPanel {
+public class CommentPanel extends JScrollPane {
     private Database db;
     private Post post;
     private User user;
@@ -30,7 +32,7 @@ public class CommentPanel extends JPanel {
 
         // Set layout
         setLayout(null);
-
+setPreferredSize(new Dimension(600,600));
         // Heading label for the comment section
         JLabel heading = new JLabel("You can Comment here!");
         heading.setForeground(Color.WHITE);
@@ -76,6 +78,9 @@ public class CommentPanel extends JPanel {
                     comment.setPostID(post.getID());  // Link comment to the current post
                     comment.setUserID(user.getId());  // Set the user who is commenting
                     comment.setContent(commentText);
+
+                   
+
                     // Clear the text field
                     commentField.setText("");
 
@@ -101,6 +106,7 @@ public class CommentPanel extends JPanel {
             commentArea.setText(comment.getContent());
             commentArea.setFont(new Font("Arial", Font.PLAIN, 14));
             commentArea.setEditable(false);
+            
             commentArea.setBounds(100, yPosition, 400, 40);
             add(commentArea);
             yPosition += 50;  // Move the next comment down by 50 pixels

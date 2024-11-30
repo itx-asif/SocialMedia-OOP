@@ -7,6 +7,7 @@ package Controller;
 import java.sql.SQLException;
 import models.Database;
 import models.Post;
+import views.Alert;
 
 /**
  *
@@ -31,6 +32,7 @@ public class CreatePost {
 			posted = true;
 		} catch (SQLException e) {
 			posted = false;
+                          new Alert(e.getMessage());
 		}
 		return posted;
 	}

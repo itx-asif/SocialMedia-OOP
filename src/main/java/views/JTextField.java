@@ -46,9 +46,7 @@ public class JTextField extends javax.swing.JTextField {
                    
     }
 
-    private void setMaxLength(JTextField aThis, int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+ 
  
 
 	    

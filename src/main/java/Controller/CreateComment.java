@@ -10,6 +10,7 @@ import models.Comments;
 import models.Database;
 import models.Post;
 import models.User;
+import views.Alert;
 
 /**
  *
@@ -26,11 +27,13 @@ public class CreateComment {
       System.out.println(comment.getContent());
      try{
          DB.getStatement().execute(query);
-         System.out.println(comment.getContent());
+         
          boolean posted = true;
+     
      }catch(SQLException e){
          boolean posted = false;
-         System.out.println(e.getMessage());
+            new Alert(e.getMessage());
+         
                  
      }
        

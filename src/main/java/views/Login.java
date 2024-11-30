@@ -58,12 +58,12 @@ public class Login {
                 if(email.getText().equals("")){
                     
                 
-                JOptionPane.showMessageDialog(frame, "fill the required fields");
+                new Alert("fill the required fields");
             }
                if(password.getText().equals("")){
                     
                 
-                JOptionPane.showMessageDialog(frame, "fill the required fields");
+                new Alert("fill the required fields");
             }          
                
                ReadUser U = new ReadUser(email.getText(),password.getText(),DB);
@@ -72,7 +72,7 @@ public class Login {
                       frame.dispose();
                }
                else{
-                   JOptionPane.showMessageDialog(frame, "User not Found");
+                   new Alert("User not Found");
                }
                   
                 
