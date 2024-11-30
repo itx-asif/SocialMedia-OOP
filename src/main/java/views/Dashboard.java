@@ -24,18 +24,18 @@ public class Dashboard {
             public void actionPerformed(ActionEvent e) {
                 Post postToCommentOn = (Post) e.getSource(); // The source of the event is the post object
                 CommentPanel commentPanel = new CommentPanel(DB, postToCommentOn, U);
+                commentPanel.revalidate();
+                commentPanel.repaint();
                 cardPanel.add(commentPanel, "Comment");
                 cardLayout.show(cardPanel, "Comment");
             }
         };
 
-        // Add panels to the cardPanel with unique names
-        HomePanel homePanel = new HomePanel(U, DB, commentActionListener);
-        PostPanel postPanel = new PostPanel(U, DB, commentActionListener);
+       
+       HomePanel homePanel = new HomePanel(U, DB, commentActionListener);
+       cardPanel.add(homePanel, "Home");
+                
         SettingPanel settingPanel = new SettingPanel(U, DB);
-
-        cardPanel.add(homePanel, "Home");
-        cardPanel.add(postPanel, "Post");
         cardPanel.add(settingPanel, "Setting");
 
         // Create the sidebar (left side) and add it to the frame with its actionListener
@@ -46,9 +46,18 @@ public class Dashboard {
                 // Show the appropriate panel based on button clicked
                 switch (command) {
                     case "Home":
+                        HomePanel homePanel = new HomePanel(U, DB, commentActionListener);
+                        homePanel.revalidate();
+                homePanel.repaint();
+                cardPanel.add(homePanel, "Home");
+                
                         cardLayout.show(cardPanel, "Home");
                         break;
                     case "Post":
+                        PostPanel postPanel = new PostPanel(U, DB, commentActionListener);
+                          postPanel.revalidate();
+                postPanel.repaint();
+                cardPanel.add(postPanel, "Post");
                         cardLayout.show(cardPanel, "Post");
                         break;
                     case "Setting":
@@ -58,6 +67,8 @@ public class Dashboard {
                         System.exit(0);
                         break;
                 }
+                 cardPanel.revalidate();
+                cardPanel.repaint();
             }
         });
 
@@ -68,6 +79,6 @@ public class Dashboard {
 
         // Finalize frame settings
         frame.setVisible(true);
-        frame.setSize(800, 600);  // Set a fixed size for the window
+    
     }
 }

@@ -1,5 +1,6 @@
 package views;
 
+import Controller.CreateComment;
 import Controller.ReadPostComments;
 import Controller.Readuserbyid;
 import java.awt.Color;
@@ -48,7 +49,7 @@ public class CommentPanel extends JPanel {
 
         // Display the post content (e.g., post text)
         JLabel postContentLabel = new JLabel("<html><div style='width: 300px'>" + post.getContent() + "</div></html>");
-        postContentLabel.setForeground(Color.WHITE);
+       
         postContentLabel.setFont(new Font("Arial", Font.PLAIN, 14));
         postContentLabel.setBounds(100, 100, 400, 50);
         add(postContentLabel);
@@ -75,46 +76,14 @@ public class CommentPanel extends JPanel {
                     comment.setPostID(post.getID());  // Link comment to the current post
                     comment.setUserID(user.getId());  // Set the user who is commenting
                     comment.setContent(commentText);
-
-                    // Save the comment to the database (uncomment if required)
-                    // CreateComment createComment = new CreateComment(db);
-                    // createComment.addComment(comment);
-
                     // Clear the text field
                     commentField.setText("");
 
-                    // Reload comments after posting a new one
-                    ReadPostComments commentReader = new ReadPostComments(post, db);
-                    ArrayList<Comments> postcomments = commentReader.getComments();
-
-                    // Start y-position below the comment input area
-                    int yPosition = 220;
-
-                    // Remove all previous components to reset the comments list
-                    removeAll();
-
-                    // Re-add the header, post content, and input field for new comment
-                    add(heading);
-                    add(postContentLabel);
-                    add(commentField);
-                    add(commentButton);
-                    add(userLabel);
-
-                    // Display each comment in the list
-                    for (Comments postcomment : postcomments) {
-                        JTextArea commentArea = new JTextArea();
-                        commentArea.setText(postcomment.getContent());
-                        commentArea.setFont(new Font("Arial", Font.PLAIN, 14));
-                        commentArea.setEditable(false);
-                        commentArea.setBackground(Color.LIGHT_GRAY);
-                        commentArea.setBounds(100, yPosition, 400, 40);
-                        add(commentArea);
-                        yPosition += 50;  // Move the next comment down by 50 pixels
-                    }
-
-                    // Revalidate and repaint to ensure the panel is updated visually
-                    revalidate();
-                    repaint();
+                  CreateComment c = new CreateComment(DB,comment);
+                  if(c.isPosted()){
+                      revalidate();
+                     repaint();  
+                  }
                 }
             }
         });
@@ -132,7 +101,6 @@ public class CommentPanel extends JPanel {
             commentArea.setText(comment.getContent());
             commentArea.setFont(new Font("Arial", Font.PLAIN, 14));
             commentArea.setEditable(false);
-            commentArea.setBackground(Color.LIGHT_GRAY);
             commentArea.setBounds(100, yPosition, 400, 40);
             add(commentArea);
             yPosition += 50;  // Move the next comment down by 50 pixels

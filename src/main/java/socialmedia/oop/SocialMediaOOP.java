@@ -1,24 +1,18 @@
 package socialmedia.oop;
 
 
-//import com.formdev.flatlaf.FlatDarkLaf;
+
 import com.formdev.flatlaf.FlatLaf;
-//import com.formdev.flatlaf.FlatLightLaf;
-  import com.formdev.flatlaf.themes.FlatMacDarkLaf;
-import com.formdev.flatlaf.themes.FlatMacLightLaf;
-//import java.awt.Color;
-import java.awt.EventQueue;
-import javax.swing.JFrame;
-//import java.util.Collections;
+import com.formdev.flatlaf.themes.FlatMacDarkLaf;
+
+
 import javax.swing.UIManager;
 import views.*;
 
 public class SocialMediaOOP {
 
     public static void main(String[] args) {
-        // Install custom font
-      //  FlatRobotoFont.install();
-
+   
         // Register custom theme defaults with error handling
         try {
             FlatLaf.registerCustomDefaultsSource("Register.Themes");
@@ -35,7 +29,7 @@ public class SocialMediaOOP {
       
 
         // Launch the application
-        EventQueue.invokeLater(() -> new ProgressBar());
+        new ProgressBar();
         
   
     }

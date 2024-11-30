@@ -18,7 +18,7 @@ public class JFrame extends javax.swing.JFrame {
 		setSize(900, 625);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
-                setResizable(false);
+              //  setResizable(false);
                 
                 setLayout(new MigLayout("al center center"));
 //               Icon set by umair

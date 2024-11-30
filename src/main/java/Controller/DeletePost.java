@@ -19,8 +19,6 @@ public class DeletePost {
         // Start a transaction to ensure data integrity (optional but recommended)
         String deletePostQuery = "DELETE FROM `posts` WHERE `ID` = "+postID;
         try {
-      
-           
           
                 database.getStatement().execute(deletePostQuery);
     

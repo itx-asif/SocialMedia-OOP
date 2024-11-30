@@ -43,7 +43,7 @@ public class ReadLike {
 
     // Method to check if a user has already liked the post
     public boolean isLiked(User u) {
-        String query = "SELECT 1 FROM `likes` WHERE UserID = " + u.getId() + " AND POSTID = " + p.getID() + " LIMIT 1;";
+        String query = "SELECT * FROM `likes` WHERE UserID = " + u.getId() + " AND POSTID = " + p.getID() + " LIMIT 1;";
         try {
             ResultSet rs = Db.getStatement().executeQuery(query);
             return rs.next();  // Returns true if user has liked the post

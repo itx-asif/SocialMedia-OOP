@@ -9,7 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTextField;
+//import javax.swing.JTextField;
 import models.Database;
 import models.*;
 
@@ -22,7 +22,7 @@ public class HomePanel extends JPanel {
         allPosts = postReader.getPosts();
 
         // Set the layout and border for the panel
-        setLayout(new BorderLayout(0, 40));
+        setLayout(new BorderLayout(0, 10));
         setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
 
         // Create a label and input field for creating a post
@@ -30,11 +30,14 @@ public class HomePanel extends JPanel {
         JPanel createPostPanel = new JPanel();
         createPostPanel.setLayout(new FlowLayout(FlowLayout.CENTER)); // Align items to the center
 
-        JTextField postfield = new JTextField();
+        JTextField postfield = new JTextField("share your Idea.......");
+       
+       
         postfield.setPreferredSize(new Dimension(400, 30));
         createPostPanel.add(cPost);
         createPostPanel.add(postfield);
- JPanel contentPanel = new JPanel();
+        
+    JPanel contentPanel = new JPanel();
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS));
 
         // Create post button
@@ -85,7 +88,10 @@ public class HomePanel extends JPanel {
 
         // Wrap the content panel in a JScrollPane for scrolling
         JScrollPane scrollPane = new JScrollPane(contentPanel);
-        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS); // Always show vertical scrollbar
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+       scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER); // Always show vertical scrollbar
         add(scrollPane, BorderLayout.CENTER);
     }
+
+  
 }

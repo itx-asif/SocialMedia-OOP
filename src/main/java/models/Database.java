@@ -50,7 +50,6 @@ public class Database {
                        "    id INT AUTO_INCREMENT PRIMARY KEY,\n" +
                        "    UserID INT,\n" +
                        "    Content TEXT NOT NULL,\n" +
-                       "    Likes INT DEFAULT 0,\n" +
                        "    CreatedAT TIMESTAMP DEFAULT CURRENT_TIMESTAMP,\n" +
                        "    FOREIGN KEY (UserID) REFERENCES users(id) ON DELETE CASCADE\n" +
                        ");";

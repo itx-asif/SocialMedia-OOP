@@ -9,7 +9,8 @@ import java.awt.Font;
 import java.awt.Shape;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
-import javax.swing.BorderFactory;
+import javax.swing.*;
+import javax.swing.text.*;
 
 /**
  *
@@ -43,6 +44,10 @@ public class JTextField extends javax.swing.JTextField {
 			}
 		});
                    
+    }
+
+    private void setMaxLength(JTextField aThis, int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
  
 
