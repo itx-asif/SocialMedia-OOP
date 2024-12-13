@@ -9,7 +9,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.JPasswordField;  // Use JPasswordField for password input
 import models.Database;
 import models.User;
 
