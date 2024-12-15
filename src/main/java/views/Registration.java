@@ -10,25 +10,10 @@ package views;
 import Controller.CreateUser;
 import java.awt.*;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-
 import java.awt.event.*;
+import javax.swing.*;
+import models.*;
 
-//import javax.swing.*;
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JOptionPane;
-
-import javax.swing.SwingConstants;
-import static javax.swing.SwingConstants.BOTTOM;
-import static javax.swing.SwingConstants.TOP;
-import models.Database;
-import models.User;
 /**
  *
  * @author malik

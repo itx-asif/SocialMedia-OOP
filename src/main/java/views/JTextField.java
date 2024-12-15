@@ -4,13 +4,11 @@
  */
 package views;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.Shape;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import javax.swing.*;
-import javax.swing.text.*;
 
 /**
  *
@@ -22,7 +20,7 @@ public class JTextField extends javax.swing.JTextField {
     public JTextField(String hint) {
         super();
 		this.hint = hint;
-		setFont(new Font("Roboto", Font.PLAIN, 16));
+		
 		setText(hint);
 		
 		setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));

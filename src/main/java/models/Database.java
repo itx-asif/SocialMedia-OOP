@@ -18,7 +18,7 @@ public class Database {
             statement = connection.createStatement();
             createDatabaseIfNotExists();
       
-            statement.execute("USE socialmedia"); // Use the 'socialmedia' database
+            statement.execute("USE socialmedia"); 
             createUsersTable();
             createPostsTable();
             createCommentsTable();

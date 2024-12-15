@@ -2,11 +2,8 @@ package views;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import models.Database;
-import models.Post;
-import models.User;
+import java.awt.event.*;
+import models.*;
 
 public class Dashboard {
     public Dashboard(User U, Database DB) {
@@ -24,9 +21,14 @@ public class Dashboard {
             public void actionPerformed(ActionEvent e) {
                 Post postToCommentOn = (Post) e.getSource(); // The source of the event is the post object
                 CommentPanel commentPanel = new CommentPanel(DB, postToCommentOn, U);
+                
+                JScrollPane scrollPane = new JScrollPane(commentPanel);
+                scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+                scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER); // Always show vertical scrollbar
+    
                 commentPanel.revalidate();
                 commentPanel.repaint();
-                cardPanel.add(commentPanel, "Comment");
+                cardPanel.add(scrollPane, "Comment");
                 cardLayout.show(cardPanel, "Comment");
             }
         };
@@ -39,7 +41,9 @@ public class Dashboard {
         cardPanel.add(settingPanel, "Setting");
 
         // Create the sidebar (left side) and add it to the frame with its actionListener
-        SideBar sideBar = new SideBar(new ActionListener() {
+       
+        
+      ActionListener sidebarbutton =  new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String command = e.getActionCommand();
@@ -70,8 +74,8 @@ public class Dashboard {
                  cardPanel.revalidate();
                 cardPanel.repaint();
             }
-        });
-
+        };
+ SideBar sideBar = new SideBar(sidebarbutton);
         // Set the layout for the frame
         frame.setLayout(new BorderLayout(5, 0));
         frame.add(sideBar, BorderLayout.WEST);  // Add sidebar to the left

@@ -4,16 +4,13 @@
  */
 package views;
 
-import javax.swing.JOptionPane;
-import javax.swing.JFrame;
+import javax.swing.*;
 /**
  *
  * @author itxas
  */
-public class Alert {
-    public Alert(String error){
-        JFrame frame = new JFrame("Error");
-                JOptionPane.showMessageDialog(frame, frame, error, 0);
-
+public class Alert extends JFrame {
+    public Alert(String error){     
+                JOptionPane.showMessageDialog(this, error);
     }
 }

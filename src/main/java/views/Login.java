@@ -6,18 +6,11 @@
  
 package views;
 
-import Controller.ReadUser;
+import Controller.*;
 import java.awt.*;
 import java.awt.event.*;
-//import javax.swing.*;
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-//import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import models.Database;
+import javax.swing.*;
+import models.*;
 
 
 /**
@@ -42,7 +35,6 @@ public class Login {
 		center.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
                     JLabel Emaillabel = new JLabel("Email");
 		JTextField email = new JTextField("Email");
-                email.setFont(new Font("Roboto", Font.PLAIN, 16));
                 		center.add(Emaillabel);
 		center.add(email);
                 JLabel Passwordlabel = new JLabel("Password");

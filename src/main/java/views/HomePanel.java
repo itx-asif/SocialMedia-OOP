@@ -3,14 +3,7 @@ import Controller.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
-import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-//import javax.swing.JTextField;
-import models.Database;
+import javax.swing.*;
 import models.*;
 
 public class HomePanel extends JPanel {

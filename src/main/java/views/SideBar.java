@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 public class SideBar extends JPanel {
     public SideBar(ActionListener listener) {
         // Set up the sidebar panel
-      //  setBackground(Color.GRAY);
         setPreferredSize(new Dimension(200, 625)); // Set a fixed size for the sidebar panel
         setLayout(null);  // Absolute positioning (you could use a LayoutManager for more flexibility)
 

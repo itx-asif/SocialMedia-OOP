@@ -1,81 +1,59 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package views;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import javax.swing.BorderFactory;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
+import java.awt.*;
 
-
-
+import javax.swing.*;
 
 public class ProgressBar {
- public ProgressBar(){
-      javax.swing.JFrame frame = new javax.swing.JFrame();
-        JPanel p1 = new JPanel();
-        JLabel l1 = new JLabel();
+    public ProgressBar() {
+        // Create frame and panel
+        JFrame frame = new JFrame();
+        JPanel panel = new JPanel();
+        JLabel label = new JLabel("LINKUP", JLabel.CENTER);
 
+        // Set up frame properties
         frame.setSize(600, 200);
         frame.setUndecorated(true);
         frame.setLocationRelativeTo(null);
+        frame.setAlwaysOnTop(true);
 
-        l1.setText("LINKUP");
-        l1.setForeground(Color.decode("#f2aa4c"));
-        l1.setFont(new java.awt.Font("Segoe UI", 3, 32));
-        l1.setHorizontalAlignment(JLabel.CENTER);
+        // Set label properties
+        label.setForeground(Color.decode("#f2aa4c"));
+        label.setFont(new Font("Segoe UI", Font.BOLD, 32));
 
-        p1.setLayout(new BorderLayout());
-        p1.setBorder(BorderFactory.createEmptyBorder(53, 84, 76, 84));
-        p1.setBackground(Color.white);
+        // Set panel properties
+        panel.setLayout(new BorderLayout());
+        panel.setBorder(BorderFactory.createEmptyBorder(53, 84, 76, 84));
+        panel.add(label, BorderLayout.NORTH);
 
-        p1.add(l1, BorderLayout.NORTH);
-
-        JPanel progressPanel = new JPanel();
-        progressPanel.setBackground(Color.white);
-        progressPanel.setLayout(new BoxLayout(progressPanel, BoxLayout.Y_AXIS));
-
-        progressPanel.add(Box.createVerticalStrut(10));
-
-        JProgressBar progressBar = new JProgressBar();
-        progressBar.setIndeterminate(false);
+        // Create and configure progress bar
+        JProgressBar progressBar = new JProgressBar(0, 100);
         progressBar.setValue(0);
-        progressBar.setMaximum(100);
+         //progressBar.setIndeterminate(false);
         progressBar.setForeground(Color.decode("#f2aa4c"));
         progressBar.setBorderPainted(false);
         progressBar.setStringPainted(false);
 
-        progressPanel.add(progressBar);
-        p1.add(progressPanel, BorderLayout.SOUTH);
-        frame.add(p1);
+      
+        panel.add(progressBar, BorderLayout.SOUTH);
 
-       frame.setAlwaysOnTop(true);
-     frame.setVisible(true);
+        // Add panel to frame and show frame
+        frame.add(panel);
+        frame.setVisible(true);
+
+        // Progress bar update loop
         try {
             for (int i = 0; i <= 100; i++) {
-                Thread.sleep(10);
+                Thread.sleep(30);
                 progressBar.setValue(i);
-                if(i==100){
-                    
-                 frame.dispose();
-                new Welcome();
-                    
-                   
-            
+                if (i == 100) {
+                    frame.dispose();
+                    new Welcome();  // Assuming Welcome is another class you are launching
                 }
-                
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-      
-      
-  
-   }
+    }
 }

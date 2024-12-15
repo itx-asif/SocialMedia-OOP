@@ -1,17 +1,10 @@
 package views;
 
 import Controller.UpdateUser;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;  // Use JPasswordField for password input
-import models.Database;
-import models.User;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;  // Use JPasswordField for password input
+import models.*;
 
 public class SettingPanel extends JPanel {
 
@@ -23,8 +16,7 @@ public class SettingPanel extends JPanel {
         head.setBounds(250, 0, 200, 50);
         add(head);
 
-        // Set background color and layout
-     //   setBackground(Color.WHITE);
+
         setLayout(null);
 
         // Name Label and TextField
@@ -35,7 +27,7 @@ public class SettingPanel extends JPanel {
         add(nameLabel);
 
         JTextField nameField = new JTextField(U.getFirstName()); // Set initial name from User object
-        nameField.setBounds(300, 100, 200, 30);
+        nameField.setBounds(300, 100, 200, 40);
         add(nameField);
 
         // Last Name Label and TextField
@@ -46,7 +38,7 @@ public class SettingPanel extends JPanel {
         add(lnameLabel);
 
         JTextField lnameField = new JTextField(U.getLastName()); // Set initial last name from User object
-        lnameField.setBounds(300, 150, 200, 30);
+        lnameField.setBounds(300, 150, 200, 40);
         add(lnameField);
 
         // Email Label and TextField
@@ -57,7 +49,7 @@ public class SettingPanel extends JPanel {
         add(emailLabel);
 
         JTextField emailField = new JTextField(U.getEmail()); // Set initial email from User object
-        emailField.setBounds(300, 200, 200, 30);
+        emailField.setBounds(300, 200, 200, 40);
         add(emailField);
 
         // Old Password Label and PasswordField
@@ -67,8 +59,8 @@ public class SettingPanel extends JPanel {
         passwordLabel.setFont(new Font("Arial", Font.BOLD, 20));
         add(passwordLabel);
 
-        JTextField passwordField = new JTextField(20);  // Use JPasswordField for password input
-        passwordField.setBounds(300, 250, 200, 30);
+        JTextField passwordField = new JTextField("Enter Old Password");  // Use JPasswordField for password input
+        passwordField.setBounds(300, 250, 200, 40);
         add(passwordField);
 
         // New Password Label and PasswordField
@@ -78,8 +70,8 @@ public class SettingPanel extends JPanel {
         confirmPasswordLabel.setFont(new Font("Arial", Font.BOLD, 20));
         add(confirmPasswordLabel);
 
-        JTextField confirmPasswordField = new JTextField(20);  // Use JPasswordField for password input
-        confirmPasswordField.setBounds(300, 300, 200, 30);
+        JTextField confirmPasswordField = new JTextField("Enter New Password");  // Use JPasswordField for password input
+        confirmPasswordField.setBounds(300, 300, 200, 40);
         add(confirmPasswordField);
 
         // Update Profile Button
@@ -105,11 +97,12 @@ public class SettingPanel extends JPanel {
                 boolean updated = updateUserController.updateUser(U, firstName, lastName, email, oldPassword, newPassword);
 
                 if (updated) {
-                    // If profile update is successful
-                    System.out.println("Profile updated successfully.");
+                 
+                    U.setPassword(newPassword);
+                    new Alert("Profile updated successfully.");
                 } else {
                     // If profile update fails
-                    System.out.println("Profile update failed. Please check your input.");
+                    new Alert("Profile update failed. Please check your inputs.");
                 }
             }
         });

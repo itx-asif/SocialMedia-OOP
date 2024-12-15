@@ -1,11 +1,7 @@
 package views;
 
-import Controller.DeletePost;
-import Controller.ReadLike;
-import Controller.Readuserbyid;
-import models.Post;
-import models.User;
-import models.Database;
+import Controller.*;
+import models.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -34,11 +30,12 @@ public class showPostPanel extends JPanel {
         User postUser  = new Readuserbyid(post.getUserID(),DB).getUser();
 
         // Title Label (User 's name)
-        titleLabel = new JLabel(postUser .getFirstName() + " " + postUser .getLastName(), SwingConstants.LEFT);
+        titleLabel = new JLabel(postUser.getFirstName() + " " + postUser.getLastName(), SwingConstants.LEFT);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 18));
 
         // Content Label (Post content)
-        contentLabel = new JLabel("<html><div style='width: 300px;'>" + post.getContent() + "</div></html>");
+        contentLabel = new JLabel("<html>" + post.getContent() + "</html>");
+        contentLabel.setSize(200,400);
         contentLabel.setFont(new Font("Arial", Font.PLAIN, 16));
 
         // Like and Comment Buttons
@@ -99,7 +96,7 @@ commentButton.addActionListener(new ActionListener() {
         add(contentLabel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
 
-        setPreferredSize(new Dimension(600, calculateHeight())); // Set preferred size
+        setPreferredSize(new Dimension(200, calculateHeight())); // Set preferred size
     }
 
     // Like button logic
@@ -126,13 +123,6 @@ commentButton.addActionListener(new ActionListener() {
     // Show delete button
     public void showDeleteButton() {
         deleteButton.setVisible(true);
-        revalidate();
-        repaint();
-    }
-
-    // Hide delete button
-    public void hideDeleteButton() {
-        deleteButton.setVisible(false);
         revalidate();
         repaint();
     }

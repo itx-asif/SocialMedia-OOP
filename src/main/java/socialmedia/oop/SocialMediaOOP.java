@@ -3,7 +3,7 @@ package socialmedia.oop;
 
 
 import com.formdev.flatlaf.FlatLaf;
-import com.formdev.flatlaf.themes.FlatMacDarkLaf;
+import com.formdev.flatlaf.themes.FlatMacLightLaf;
 
 
 import javax.swing.UIManager;
@@ -17,7 +17,7 @@ public class SocialMediaOOP {
         try {
             FlatLaf.registerCustomDefaultsSource("Register.Themes");
            
-            FlatMacDarkLaf.setup();
+            FlatMacLightLaf.setup();
             UIManager.put( "Component.arc", 999 );
            
             

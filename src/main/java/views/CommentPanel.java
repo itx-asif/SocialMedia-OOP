@@ -1,26 +1,13 @@
 package views;
 
-import Controller.CreateComment;
-import Controller.ReadPostComments;
-import Controller.Readuserbyid;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import models.Database;
-import models.Post;
-import models.User;
-import models.Comments;
+import Controller.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import javax.swing.*;
+import models.*;
 
-public class CommentPanel extends JScrollPane {
+public class CommentPanel extends JPanel {
     private Database db;
     private Post post;
     private User user;
@@ -35,7 +22,7 @@ public class CommentPanel extends JScrollPane {
 setPreferredSize(new Dimension(600,600));
         // Heading label for the comment section
         JLabel heading = new JLabel("You can Comment here!");
-        heading.setForeground(Color.WHITE);
+        heading.setForeground(Color.BLACK);
         heading.setFont(new Font("Arial", Font.BOLD, 20));
         heading.setBounds(100, 50, 300, 30);
         add(heading);
@@ -44,7 +31,7 @@ setPreferredSize(new Dimension(600,600));
         Readuserbyid read = new Readuserbyid(post.getUserID(), DB);
         User postUser = read.getUser();
         JLabel userLabel = new JLabel(postUser.getFirstName() + " " + postUser.getLastName());
-        userLabel.setForeground(Color.WHITE);
+        userLabel.setForeground(Color.BLACK);
         userLabel.setFont(new Font("Arial", Font.PLAIN, 14));
         userLabel.setBounds(100, 80, 300, 30);
         add(userLabel);
@@ -57,7 +44,7 @@ setPreferredSize(new Dimension(600,600));
         add(postContentLabel);
 
         // Create a text field to enter the comment
-        JTextField commentField = new JTextField();
+        JTextField commentField = new JTextField("Share You Thoughts");
         commentField.setBounds(100, 170, 300, 30);
         add(commentField);
 
@@ -115,5 +102,8 @@ setPreferredSize(new Dimension(600,600));
         // Revalidate and repaint to ensure the panel is updated visually
         revalidate();
         repaint();
+        
+        
+
     }
 }

@@ -1,14 +1,11 @@
 package views;
 
 import Controller.ReadUserPost;
-import models.Database;
-import models.Post;
-import models.User;
+import models.*;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 
 public class PostPanel extends JPanel {
