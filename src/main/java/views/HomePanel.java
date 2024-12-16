@@ -24,8 +24,6 @@ public class HomePanel extends JPanel {
         createPostPanel.setLayout(new FlowLayout(FlowLayout.CENTER)); // Align items to the center
 
         JTextField postfield = new JTextField("share your Idea.......");
-       
-       
         postfield.setPreferredSize(new Dimension(400, 30));
         createPostPanel.add(cPost);
         createPostPanel.add(postfield);
@@ -61,8 +59,8 @@ public class HomePanel extends JPanel {
                             contentPanel.add(postPanel);
                         }
                         // Revalidate and repaint the content panel to reflect changes
-                        contentPanel.revalidate();
-                        contentPanel.repaint();
+//                        contentPanel.revalidate();
+//                        contentPanel.repaint();
                     }
                 }
             }
@@ -70,9 +68,6 @@ public class HomePanel extends JPanel {
         createPostPanel.add(postbutton);
         add(createPostPanel, BorderLayout.NORTH);
 
-        // Panel to display the list of posts
-       
-        // Initially render all posts directly
         for (Post post : allPosts) {
             showPostPanel postPanel = new showPostPanel(db, post, user, commentListener);
             postPanel.setAlignmentX(Component.LEFT_ALIGNMENT); // Align post panel to the left
@@ -84,7 +79,5 @@ public class HomePanel extends JPanel {
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER); // Always show vertical scrollbar
         add(scrollPane, BorderLayout.CENTER);
-    }
-
-  
+    } 
 }

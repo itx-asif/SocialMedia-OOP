@@ -10,10 +10,10 @@ import java.util.ArrayList;
 
 public class PostPanel extends JPanel {
     private ArrayList<Post> allPosts;
-    private JPanel contentPanel;
+  
 
     public PostPanel(User u, Database db, ActionListener commentListener) {
-        // Initialize the ReadUserPost to fetch posts of the specific user
+        // Initialize the ReadUserPost to fetch posts of the specific user 
         ReadUserPost postReader = new ReadUserPost(u.getId(), db);
         allPosts = postReader.getUserPosts();
 
@@ -21,7 +21,7 @@ public class PostPanel extends JPanel {
         setLayout(new BorderLayout(0,0));
        
         // Create contentPanel with BoxLayout (Vertical)
-        contentPanel = new JPanel();
+       JPanel contentPanel = new JPanel();
         contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.Y_AXIS)); // Use BoxLayout for vertical stacking
 
         // Initial rendering of posts
@@ -44,8 +44,9 @@ public class PostPanel extends JPanel {
         for (Post post : allPosts) {
             // Create a wrapper for the post
             JPanel postWrapper = new JPanel();
+           
             postWrapper.setLayout(new BoxLayout(postWrapper, BoxLayout.X_AXIS));  // Horizontal layout for post content and delete button
-postWrapper.setAlignmentX(Component.LEFT_ALIGNMENT);
+            postWrapper.setAlignmentX(Component.LEFT_ALIGNMENT);
             // Create and add the showPostPanel
             showPostPanel postPanel = new showPostPanel(db, post, u, commentListener); 
             postPanel.showDeleteButton(); // Show the delete button for each post
@@ -58,9 +59,6 @@ postWrapper.setAlignmentX(Component.LEFT_ALIGNMENT);
             contentPanel.add(postWrapper);
         }
 
-        // Revalidate and repaint to ensure the panel is updated visually
-      revalidate();
-       repaint();
     }
 
    

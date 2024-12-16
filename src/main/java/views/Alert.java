@@ -5,10 +5,7 @@
 package views;
 
 import javax.swing.*;
-/**
- *
- * @author itxas
- */
+
 public class Alert extends JFrame {
     public Alert(String error){     
                 JOptionPane.showMessageDialog(this, error);

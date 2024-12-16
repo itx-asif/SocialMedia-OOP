@@ -19,19 +19,16 @@ public class CommentPanel extends JPanel {
 
         // Set layout
         setLayout(null);
-setPreferredSize(new Dimension(600,600));
+        setPreferredSize(new Dimension(600,600));
         // Heading label for the comment section
         JLabel heading = new JLabel("You can Comment here!");
-        heading.setForeground(Color.BLACK);
         heading.setFont(new Font("Arial", Font.BOLD, 20));
         heading.setBounds(100, 50, 300, 30);
         add(heading);
 
-        // Get the user information of the post's author
         Readuserbyid read = new Readuserbyid(post.getUserID(), DB);
         User postUser = read.getUser();
         JLabel userLabel = new JLabel(postUser.getFirstName() + " " + postUser.getLastName());
-        userLabel.setForeground(Color.BLACK);
         userLabel.setFont(new Font("Arial", Font.PLAIN, 14));
         userLabel.setBounds(100, 80, 300, 30);
         add(userLabel);
@@ -65,17 +62,14 @@ setPreferredSize(new Dimension(600,600));
                     comment.setPostID(post.getID());  // Link comment to the current post
                     comment.setUserID(user.getId());  // Set the user who is commenting
                     comment.setContent(commentText);
-
-                   
-
-                    // Clear the text field
                     commentField.setText("");
 
                   CreateComment c = new CreateComment(DB,comment);
                   if(c.isPosted()){
-                      revalidate();
-                     repaint();  
+                   new Alert("comment posted");
+                    commentField.setText("");
                   }
+                 
                 }
             }
         });
@@ -98,12 +92,5 @@ setPreferredSize(new Dimension(600,600));
             add(commentArea);
             yPosition += 50;  // Move the next comment down by 50 pixels
         }
-
-        // Revalidate and repaint to ensure the panel is updated visually
-        revalidate();
-        repaint();
-        
-        
-
     }
 }

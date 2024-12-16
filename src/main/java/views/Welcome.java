@@ -19,8 +19,8 @@ public class Welcome {
         JFrame frame = new JFrame();
         frame.setTitle("Welcome Page");
         frame.setLayout(new BorderLayout());
-Database DB = new Database();
-        // Left Panel ka kaam hai idhar
+        Database DB = new Database();
+        
         JPanel p1 = new JPanel();
         p1.setBackground(Color.decode("#f5f5f5"));
         p1.setLayout(new GridBagLayout());
@@ -50,14 +50,13 @@ Database DB = new Database();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER,10, 10));
 
         // Login Button
-        Button loginButton = new Button(Color.decode("#f5f5f5"),Color.black ,Color.black,10);
+        JButton loginButton = new JButton();
         loginButton.setText("Login");
         loginButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
         buttonPanel.add(loginButton);
         
         // Register Button
-        Button registrationButton = new Button(Color.white,Color.decode("#f2aa4c"),Color.decode("#f2aa4c"),10);
-        registrationButton.setHoverColor(Color.black);
+        JButton registrationButton = new JButton();
         registrationButton.setFont(new Font("Segoe UI", Font.BOLD, 16));
         registrationButton.setText("Registration");
         buttonPanel.add(registrationButton);
@@ -71,8 +70,8 @@ Database DB = new Database();
         p2.setLayout(new BorderLayout());
 
         //  image
-ImageIcon imageIcon = new ImageIcon("./src/main/java/pics/logo.png");
- // Replace with the path to your image
+            ImageIcon imageIcon = new ImageIcon("./src/main/java/pics/logo.png");
+        // Replace with the path to your image
         Image image = imageIcon.getImage();
         Image scaledImage = image.getScaledInstance(450, 450, Image.SCALE_SMOOTH);
         imageIcon = new ImageIcon(scaledImage);
@@ -110,5 +109,3 @@ ImageIcon imageIcon = new ImageIcon("./src/main/java/pics/logo.png");
         });
     }
 }
-         
-

@@ -5,7 +5,11 @@ package models;
 
 
 public class Comments {
-
+   private int ID;
+   private int postID;
+   private int userID;
+   private String Content;
+    
     public Comments(int ID, int postID, int userID, String Content) {
         this.ID = ID;
         this.postID = postID;
@@ -15,11 +19,7 @@ public class Comments {
     public Comments(){
         
     }
-    int ID;
-    int postID;
-    int userID;
-    String Content;
-    
+   
     public int getID() {
         return ID;
     }

@@ -8,8 +8,7 @@ import java.sql.SQLException;
 import models.Comments;
 
 import models.Database;
-import models.Post;
-import models.User;
+
 import views.Alert;
 
 /**

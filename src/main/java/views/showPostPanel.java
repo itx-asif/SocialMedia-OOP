@@ -5,8 +5,7 @@ import models.*;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import javax.swing.border.EmptyBorder;
 
 public class showPostPanel extends JPanel {
@@ -42,6 +41,7 @@ public class showPostPanel extends JPanel {
         ReadLike like = new ReadLike(DB, post);
         likeButton = new JButton("Like " + getLikes(like));
         likeButton.setFont(new Font("Arial", Font.PLAIN, 14));
+        
       likeButton.addActionListener(new ActionListener() {
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -70,7 +70,7 @@ commentButton.addActionListener(new ActionListener() {
     public void actionPerformed(ActionEvent e) {
        DeletePost d = new DeletePost(post.getID(),DB);
        d.delete();
-       Container parent = showPostPanel.this.getParent(); // Get parent container of this panel
+      Container parent = showPostPanel.this.getParent();  // Get parent container of this panel
         if (parent != null) {
             parent.remove(showPostPanel.this); // Remove this post panel from its parent container
         }
@@ -95,11 +95,10 @@ commentButton.addActionListener(new ActionListener() {
         add(titleLabel, BorderLayout.NORTH);
         add(contentLabel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
-
-        setPreferredSize(new Dimension(200, calculateHeight())); // Set preferred size
+        setPreferredSize(new Dimension(200, 200)); // Set preferred size
     }
 
-    // Like button logic
+
     private void handleLikeButton(User user, ReadLike like) {
         if (like.isLiked(user)) {
             like.dislikePost(user);
@@ -110,20 +109,11 @@ commentButton.addActionListener(new ActionListener() {
         likeButton.setText("Like " + getLikes(like));
     }
 
-    // Calculate the height for the panel
-    private int calculateHeight() {
-        return 115 + contentLabel.getPreferredSize().height + 40; // Title + content + button panel height
-    }
-
-    // Get the number of likes
     private int getLikes(ReadLike like) {
         return like.getLikes().isEmpty() ? 0 : like.getLikes().size();
     }
 
-    // Show delete button
     public void showDeleteButton() {
         deleteButton.setVisible(true);
-        revalidate();
-        repaint();
     }
 }

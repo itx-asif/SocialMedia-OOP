@@ -33,6 +33,7 @@ public class Likes {
     public void setPostID(int postID) {
         this.postID = postID;
     }
+    
     private int ID;
     private int userID;
     private int postID;

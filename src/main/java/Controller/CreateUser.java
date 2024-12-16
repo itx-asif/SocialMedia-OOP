@@ -48,6 +48,7 @@ import views.Alert;
             }
 
             public User getUser() {
+               u= new ReadUser(u.getEmail(),u.getPassword(),database).getUser();
 
                     String POST = "SELECT ID FROM `posts` WHERE `UserID` = "
                                                     +u.getId()+" ;";
