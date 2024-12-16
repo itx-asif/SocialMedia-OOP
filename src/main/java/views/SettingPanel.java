@@ -1,10 +1,12 @@
 package views;
 
 import Controller.UpdateUser;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;  // Use JPasswordField for password input
 import models.*;
+
 
 public class SettingPanel extends JPanel {
 
@@ -15,7 +17,6 @@ public class SettingPanel extends JPanel {
         head.setFont(new Font("Arial", Font.BOLD, 22));
         head.setBounds(250, 0, 200, 50);
         add(head);
-
 
         setLayout(null);
 
@@ -101,7 +102,7 @@ public class SettingPanel extends JPanel {
                     U.setPassword(newPassword);
                     new Alert("Profile updated successfully.");
                 } else {
-                    // If profile update fails
+                
                     new Alert("Profile update failed. Please check your inputs.");
                 }
             }
